@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mahabaleshwar Online Mart
+</title>
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: "Nunito", sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #0077b6;
+}
+
+.navbar img {
+  height: 60px;
+}
+
+.navbar .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar .menu li {
+  margin: 0 15px;
+}
+
+.navbar .menu a {
+  text-decoration: none;
+  color:  black;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar .menu a:hover {
+  color: #ffd60a;
+}
+
+.navbar .menu-icon {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background: #c6fbfa ;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .navbar .menu.show {
+    display: flex;
+  }
+  .navbar .menu li {
+    margin: 15px 0;
+  }
+  .navbar .menu-icon {
+    display: block;
+  }
+}
+ .faq-box {
+            max-width: 800px;
+            margin: auto;
+            background: #c6fbfa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            line-height: 3.6;
+        }
+        .faq-header {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+ .faq-container {
+            max-width: 1200px;
+            margin: auto;
+            background: #c6fbfa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .question {
+            background: #2c3e50;
+            color: #fff;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .question::after {
+            content: '\25BC'; /* Down arrow */
+            font-size: 16px;
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .question:hover {
+            background: #34495e;
+        }
+
+        .answer {
+            display: none;
+            padding: 15px;
+            font-size: 16px;
+            background: #f1f1f1;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+		
+		
+		
+		
+   
+.social-links,
+.footer {
+  background-color: #24262b;
+  color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 15px;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-col h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #ffd60a;
+  margin: 10px auto;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #bbbbbb;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffd60a;
+  padding-left: 5px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  background-color: #ffd60a;
+  color: #24262b;
+}
+
+@media (max-width: 768px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  background: #1d1f23;
+  color: #bbbbbb;
+  font-size: 14px;
+}
+@media (max-width: 530px) {
+  .suform-container,
+  .loginform-container {
+    background-color: rgba(54, 48, 87, 0.8);
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 11px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    border: 5px solid white;
+    z-index: 1111;
+    padding: 1rem;
+    transition: 1s all;
+  }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+	
+<nav class="navbar">
+ <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEja9QnExtlKaOCF_oQ-2y2E_-uB8zYpZYYcRyy86slIIyCAWJAsW4j5QILds6l2bbGQkPN1NbHGWnE-k1SZ0fj-zilrfBoLAg7CH7hPE9dqF0JKK0o-v1o-3Z9ij8-woTlMoThiyr05HX6f7WpCDq-4gbkIBwEjrLkxfut0lBzJhOqlQU1gdpmSYb8cMx8/s320/1334.png" 
+ alt="logo">
+  <ul class="menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+	 <li><a href="shops.html">Shops</a></li>
+	  <li><a href="services.html">Services</a></li>
+	  	<li><a href="gallery.html">Gallery</a></li>
+	<li><a href="feedback.html">Feedback</a></li>
+		 <li><a href="Faq.html">FAQ</a></li>
+		 <li><a href="https://mahabaleshwaremarketing.blogspot.com/2025/03/mahabaleshwar-e-marketing.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+	<li><a href="admin.html">Admin</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+</nav>
+<section>
+
+<br>
+<div class="faq-box">
+        <div class="faq-header">Frequently Asked Questions (FAQ)</div>
+        <p> Mahabaleshwar Online Mart
+! We are here to support local businesses and provide customers with an easy way to explore and shop for products and services in Mahabaleshwar.</p>
+
+        <p><strong>About Mahabaleshwar Online Mart
+:</strong> It is an online platform designed to connect local businesses with customers, offering a seamless shopping experience for a variety of products and services.</p>
+ </div>
+<br>
+<section>
+    <div class="faq-container">
+	<!-- For Customers Section -->
+        <div class="faq-section">
+            <h2>For Customers</h2>
+            <button class="question">1. What is Mahabaleshwar Online Mart
+?</button>
+            <p class="answer">Mahabaleshwar E-Marketplace is an online platform that connects customers with local businesses in Mahabaleshwar. From fresh strawberries to handicrafts, hotels, and tour services, you can find a variety of products and services in one place.</p>
+
+            <button class="question">2. How do I place an order?</button>
+            <p class="answer">You can browse the listings, select the products or services you need, and follow the instructions provided by the business for ordering.</p>
+
+            <button class="question">3. Is home delivery available?</button>
+            <p class="answer">Yes! Many vendors offer home delivery services within Mahabaleshwar and nearby areas. Check the specific business listing for delivery details.</p>
+        </div>
+
+        <!-- For Business Owners Section -->
+        <div class="faq-section">
+            <h2>For Business Owners</h2>
+            <button class="question">4. How can I list my business on Mahabaleshwar E-Marketplace?</button>
+            <p class="answer">You can register your business by signing up on our platform and providing essential details.</p>
+
+            <button class="question">5. Are there any fees for listing my business?</button>
+            <p class="answer">We offer both free and premium listing options.</p>
+
+            <button class="question">6. How do I update my business information?</button>
+            <p class="answer">Once your business is listed, you can log in to your account and update your details at any time.</p>
+        </div>
+
+        <!-- General FAQ Section -->
+        <div class="faq-section">
+            <h2>General Questions</h2>
+            <button class="question">7. Is Mahabaleshwar E-Marketplace only for businesses in Mahabaleshwar?</button>
+            <p class="answer">Yes, our platform is dedicated to showcasing businesses based in or operating within Mahabaleshwar.</p>
+
+            <button class="question">8. How do I report a fraudulent listing?</button>
+            <p class="answer">If you come across a fraudulent listing, please report it to us immediately via our contact page.</p>
+
+            <button class="question">9. How can I stay updated with new businesses and offers?</button>
+            <p class="answer">Follow us on social media or subscribe to our newsletter for the latest updates.</p>
+        </div>
+
+        <p>For further assistance, feel free to reach out to us. Happy shopping and supporting local businesses in Mahabaleshwar!</p>
+
+    </div>
+</section>
+<br>
+<br>
+<footer class="footer">
+  <div class="footer-container">
+ <!-- Contact Section -->
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <p>📍 <a href="Mahabaleshwar,Maharashtra" style="color: #ffd60a;">Mahabaleshwar,Maharashtra</a></p>
+      <p>📞 <a href="tel:8262932945" style="color: #ffd60a;">8262932945</a></p>
+      <p>📧 <a href="mailto:lssproject05@gmail.com" style="color: #ffd60a;">lssproject05@gmail.com</a></p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-col">
+      <h3>Developers</h3>
+      <ul>
+        <li><a href="Developer.html">Developer</a></li>
+		</ul>
+    </div>
+</div>
+
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    &copy; 2025 Mahabaleshwar Online Mart
+ | MKSSS'S Maharshi Karve Mahila Mahavidyalay Satara.|Team Member Name - Laxmi Akkennawar | Sanika Ombale | Suhani Padale.
+  </div>
+</footer>
+     <script>
+    document.querySelectorAll('.question').forEach(button => {
+        button.addEventListener('click', function () {
+            // Toggle the active class on the clicked question
+            this.classList.toggle('active');
+
+            // Get the corresponding answer
+            const answer = this.nextElementSibling;
+
+            // Toggle the display of the answer
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+            } else {
+                answer.style.display = "block";
+            }
+        });
+    });
+	 function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+  }
+</script>   
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css\dashboardstyle.css" />
+    <title>Mahabaleshwar Online Mart</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="logo">
+        <img
+          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEja9QnExtlKaOCF_oQ-2y2E_-uB8zYpZYYcRyy86slIIyCAWJAsW4j5QILds6l2bbGQkPN1NbHGWnE-k1SZ0fj-zilrfBoLAg7CH7hPE9dqF0JKK0o-v1o-3Z9ij8-woTlMoThiyr05HX6f7WpCDq-4gbkIBwEjrLkxfut0lBzJhOqlQU1gdpmSYb8cMx8/w132-h132/1334.png"
+          alt="user"
+      />
+      </div>
+      <ul>
+        <li><a href="dashboard.html">Home</a></li>
+        <li><a href="adcontact.html">Contact</a></li>
+        <li><a href="adfeedback.html">Feedback</a></li>
+        <li><a href="adorderfrom.html">Orderform</a></li>
+		<li><a href="adupdate.html">Update</a></li>
+		
+      </ul>
+    </nav>
+
+    <header>
+      <button class="toggle" id="toggle">
+        <i class="fa fa-bars fa-2x"></i>
+      </button>
+      <h1>Mahabaleshwar Online Mart</h1>
+      <p>
+       Project By:
+      </p>
+	  <a href="index.html"><button class="Logout">Logout</button></a>
+    </header>
+
+    <div class="container">
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwLiR7_XrBVayrUT2RU6ckZsb6ao1BNgg0-WAlMnF9nTqb8kJ4gvS3ND2rRK0oZNxPLCtu8OuLzraTdMm2uMEECkZtRrKg9UZyVl6Q1Cjjxs9Dfy4cGdr6imO8qoDoo7_v3Dp2OxGfrUBEegULZ4V6JzJZSg1Hwhej5XQgVtDdLEzo2rnnsj2dJTpV0w8/s320/73745497-9b86-4e4c-9677-ae032851ecea.webp"
+      />
+      <h2>Mahabaleshwar Online Mart</h2>
+      <p>Welcome toMahabaleshwar Online Mart
+, your one-stop 
+		destination for authentic products from the heart of Mahabaleshwar. 
+		We bring the vibrant marketplace experience right to your doorstep,
+		offering a curated selection 
+		of locally sourced and handcrafted items.</p>
+
+      
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-container" id="modal">
+      <div class="modal">
+        <button class="close-btn" id="close">
+          <i class="fa fa-times"></i>
+        </button>
+        <div class="modal-header"><h3>Sign Up</h3></div>
+        <div class="modal-content">
+          <p>Register with us to get offers, support and more</p>
+          <form class="modal-form">
+            <div>
+              <label for="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter Name"
+                class="form-input"
+              />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter Email"
+                class="form-input"
+              />
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+                class="form-input"
+              />
+            </div>
+            <div>
+              <label for="password2">Confirm Password</label>
+              <input
+                type="password"
+                id="password2"
+                placeholder="Confirm Password"
+                class="form-input"
+              />
+            </div>
+            <input type="submit" value="Submit" class="submit-btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="js\dashboardscript.js"></script>
+  </body>
+</html>

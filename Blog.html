@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mahabaleshwar Online Mart
+</title>
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: "Nunito", sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #0077b6;
+}
+
+.navbar img {
+  height: 60px;
+}
+
+.navbar .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar .menu li {
+  margin: 0 15px;
+}
+
+.navbar .menu a {
+  text-decoration: none;
+  color:  black;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar .menu a:hover {
+  color: #ffd60a;
+}
+
+.navbar .menu-icon {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background: #c6fbfa ;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .navbar .menu.show {
+    display: flex;
+  }
+  .navbar .menu li {
+    margin: 15px 0;
+  }
+  .navbar .menu-icon {
+    display: block;
+  }
+}
+  
+.social-links,
+.footer {
+  background-color: #24262b;
+  color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 15px;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-col h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #ffd60a;
+  margin: 10px auto;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #bbbbbb;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffd60a;
+  padding-left: 5px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  background-color: #ffd60a;
+  color: #24262b;
+}
+
+@media (max-width: 768px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  background: #1d1f23;
+  color: #bbbbbb;
+  font-size: 14px;
+}
+@media (max-width: 530px) {
+  .suform-container,
+  .loginform-container {
+    background-color: rgba(54, 48, 87, 0.8);
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 11px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    border: 5px solid white;
+    z-index: 1111;
+    padding: 1rem;
+    transition: 1s all;
+  }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+	
+<nav class="navbar">
+ <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEja9QnExtlKaOCF_oQ-2y2E_-uB8zYpZYYcRyy86slIIyCAWJAsW4j5QILds6l2bbGQkPN1NbHGWnE-k1SZ0fj-zilrfBoLAg7CH7hPE9dqF0JKK0o-v1o-3Z9ij8-woTlMoThiyr05HX6f7WpCDq-4gbkIBwEjrLkxfut0lBzJhOqlQU1gdpmSYb8cMx8/s320/1334.png" 
+ alt="logo">
+  <ul class="menu" id="menu">
+     <li><a href="homepg.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+	 <li><a href="shops.html">Shops</a></li>
+	  <li><a href="services.html">Services</a></li>
+	  	<li><a href="gallery.html">Gallery</a></li>
+	<li><a href="feedback.html">Feedback</a></li>
+		 <li><a href="Faq.html">FAQ</a></li>
+		 <li><a href="https://mahabaleshwaremarketing.blogspot.com/2025/03/mahabaleshwar-e-marketing.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+	<li><a href="admin.html">Admin</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+</nav>
+<hr>
+<br>
+
+		
+			<footer class="footer">
+  <div class="footer-container">
+
+    
+    <!-- Contact Section -->
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <p>📍 <a href="Mahabaleshwar,Maharashtra" style="color: #ffd60a;">Mahabaleshwar,Maharashtra</a></p>
+      <p>📞 <a href="tel:8262932945" style="color: #ffd60a;">8262932945</a></p>
+      <p>📧 <a href="mailto:lssproject05@gmail.com" style="color: #ffd60a;">lssproject05@gmail.com</a></p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-col">
+      <h3>Our Services</h3>
+      <ul>
+        <li><a href="#">E-Marketing</a></li>
+        <li><a href="#">Product Selling</a></li>
+        <li><a href="#">Local Support</a></li>
+        <li><a href="#">24/7 Assistance</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-col">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    &copy; 2025 Mahabaleshwar E-Marketing | MKSSS'S Maharshi Karve Mahila Mahavidyalay Satara.|Team Member Name - Laxmi Akkennawar | Sanika Ombale | Suhani Padale.
+  </div>
+</footer>
+<script>
+  function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+  }
+</script>
+
+    
+</body>
+</html>

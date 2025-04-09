@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mahabaleshwar Online Mart</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="css/orderfromstyle.css">
+</head>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px); /* Slide from left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: #333;
+            transition: transform 0.3s ease;
+        }
+        .header h1:hover {
+            transform: scale(1.05);
+        }
+        .header p {
+            color: #777;
+            margin: 5px 0;
+        }
+/* Slide-in animation for text on hover */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+p {
+    display: block;
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+    transition: transform 10s ease, opacity 0.5s ease;
+    opacity: 0.7;
+}
+
+p:hover {
+    animation: slideIn 0.2s ease-in-out;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+       .rating {
+    display: flex;
+    direction: row-reverse;
+    font-size: 30px;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.star {
+    color: #ddd;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effects */
+.rating .star:hover,
+.rating .star:hover ~ .star {
+    color: #f5a623;
+    transform: scale(1.2);
+}
+
+/* Selected state */
+.rating[data-selected] .star {
+    color: #f5a623;
+}
+
+.rating .star.active,
+.rating .star.active ~ .star {
+    color: #f5a623;
+}
+
+/* Smooth entry animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.star {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+     /* Centering the buttons */
+    .contact, .share-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    /* Contact & Share Buttons */
+    .contact a, .share-btn {
+        text-decoration: none;
+        font-size: 18px;
+        padding: 12px 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .contact a {
+        background: #28a745;
+        color: white;
+    }
+
+    .contact a:hover {
+        background: #218838;
+        transform: scale(1.05);
+    }
+
+    .share-btn {
+        background: #007bff;
+        color: white;
+    }
+
+    .share-btn:hover {
+        background: #0056b3;
+        transform: scale(1.05);
+    }
+
+    /* Share Options */
+    .share-options {
+        display: none;
+        position: relative;
+        top: 200%;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: column;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 10px;
+        animation: slideDown 0.3s ease-in-out;
+    }
+
+    /* Share Links */
+    .share-options a {
+        display: block;
+        text-decoration: none;
+        font-size: 16px;
+        color: #333;
+        background: #f1f1f1;
+        padding: 8px 15px;
+        margin: 5px 0;
+        border-radius: 5px;
+        transition: background 0.3s ease-in-out, transform 0.2s;
+    }
+
+    .share-options a:hover {
+        background: #ddd;
+        transform: scale(1.05);
+    }
+
+    /* Slide-down Animation */
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+        /* Info Section */
+        .info {
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .info p {
+            font-size: 14px;
+            color: #444;
+            margin: 5px 0;
+        }
+
+
+   /* Photo Grid */
+        .photos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .photo-item {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .photo-item img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .photo-item img:hover {
+    transform: rotate(15deg);
+        }
+button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #cc5200;
+}
+        /* Lightbox Full View */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: relative;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 0.3s forwards;
+        }
+
+        .full-img {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 10px;
+        }
+
+        .image-name {
+            color: white;
+            font-size: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Buttons */
+        .close-btn, .prev-btn, .next-btn {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+            border-radius: 5px;
+        }
+
+        .close-btn:hover, .prev-btn:hover, .next-btn:hover {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .close-btn {
+            top: 20px;
+            right: 20px;
+        }
+
+        .prev-btn {
+            left: 20px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+		 .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+		 .about-container {
+            max-width: 500px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #d35400;
+            text-align: center;
+        }
+        
+		   .specialties-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .specialties-container ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .specialties-container li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        h2 {
+            color: #d35400;
+        }
+       
+		
+    </style>
+</head>
+<body>
+  <button class="back-button" onclick="goBack()">Go Back</button>
+  
+ 
+	 <div class="container">
+        <h1>About Sahyadri chana chikki </h1>
+        <q>For the past 22 years, <strong>Sahyadri Chana Chikki</strong> has been a trusted name in Mahabaleshwar, renowned for its high-quality traditional sweets and innovative confectioneries. We specialize in crafting authentic chana chikki and unique chana jelly chocolates, bringing together the best of tradition and modern taste. Our dedication to quality and purity has made us a favorite among locals and tourists alike.</q>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Sahyadri chana chikki</h1>
+            <p><strong>Owner:</strong> Mr. Manish Dhebe</p>
+            <p><strong>Address:</strong> Main Market, Mahabaleshwar</p>
+            <p><strong>History:</strong> 22 year’s, known for its high quality and authenticity.</p>
+            <div class="rating" data-shop="1">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+        </div>
+
+       
+        <!-- Contact & Share Section -->
+<div class="contact">
+  <a href="tel:+91 8408084307">📞 Call Now</a>
+    <a href="tel:+91 8408084307">💬 WhatsApp</a>
+
+    <div class="share-container">
+        <button class="share-btn" onclick="toggleShare()">🔗 Share</button>
+        <div class="share-options" id="shareOptions">
+            <a href="https://wa.me/?text=Check%20out%20Shree%20Siddhnath%20Sales%20Corporation%20https://yourwebsite.com" target="_blank">📱 WhatsApp</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank">📘 Facebook</a>
+            <a href="https://twitter.com/intent/tweet?text=Check%20out%20Shree%20Siddhnath%20Sales%20Corporation%20https://yourwebsite.com" target="_blank">🐦 Twitter</a>
+            <a href="#" onclick="copyLink()">📋 Copy Link</a>
+        </div>
+    </div>
+</div>
+
+<!-- Image Grid -->
+<div class="photos">
+    <div class="photo-item">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjK3Lls1lZgvXFy8436jWVIdFdhDhWdsP7fXos0xeKwIXv9jV93sQmScBD0Bij21meB9jmuQeV8KpqFIjcPKpOJOA_URaNLCGJ7GB0obyqPNsYGap06CCttzJAm4uflgekOgnZPyrEDKckH0AImlZEBTl67PlQ0ZpRiLxTXXXsySm76tQaHvEF3fFui9dc/s320/IMG-20250217-WA0070.jpg.jpg" alt="Photo 1" onclick="openFullView(0)">
+        <p>plain chana</p>
+		<p>Price: ₹280 kg</p>
+			<a href="orderfrom.html"><button class="Get ditails">order now</button></a>
+    </div>
+    <div class="photo-item">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpSqnKbw1h_AHJlQtit-Cu42qJ2PLLiVmg_NQ3BuwiXgXKuoRoVBVpBGsNX9wll4ZIJt8-oC52Ytqr2q3j5WOrDilMFIwGB61_BEbUDRcmLbIbs2tKz0dE05kfh4b7o1q7bRtwf_Y-J5h3-kfboz7eywPC9MmzhqOTgKA4G6jT4H6KOp2wqu57c-R7ZD0/s320/IMG-20250217-WA0041.jpg.jpg" alt="Photo 2" onclick="openFullView(1)">
+        <p>Masala chana</p>
+		<p>Price: ₹400 kg</p>
+			<a href="orderfrom.html"><button class="Get ditails">order now</button></a>
+    </div>
+    <div class="photo-item">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhr8YwHigjsdwsfNf6urObZGuV1dJ6c5499dGKbBetTqDO41jbqtfPj-b6Z2_tJgawDRpHgpdz4bLr60GgqONu234-y0vzWxuS4okaYFwKOQi0BdU9dvmECcbG2ZJwPAVM1ERJ1yh5n8Srn3wbtuuEcLys9j4gKQE5UfjV7ikKLBofIrD4hRlmZ5Ds-20g/s320/IMG-20250217-WA0043.jpg.jpg" alt="Photo 3" onclick="openFullView(2)">
+        <p>Chikki</p>
+		<p>Price: ₹100 to ₹500</p>
+			<a href="orderfrom.html"><button class="Get ditails">order now</button></a>
+    </div>
+    <div class="photo-item">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcyU2Aj8DPWSlxhMufqJ8B-9_SN4uwBN36DxbUPlEjMDec6SKfdMlQQPuqVLSINLX5ifm9rcKG_EVvCTXn83eJM7LxCQmKXZpBu7YIvRoPbIugO0-Uo7rsr1w2y8Ir4O3BwkYBcbo3_hyphenhypheniuYPoAycSDK7802YkZAUud527UBLx57DSdXxyuJV1gPS2TCw/s320/IMG-20250217-WA0044.jpg.jpg" alt="Photo 4" onclick="openFullView(3)">
+        <p>Chat Chole</p>
+		<p>Price: ₹400 kg</p>
+			<a href="orderfrom.html"><button class="Get ditails">order now</button></a>
+    </div>
+    <div class="photo-item">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhX2TboULS_UsbWiPE2gRwOAi-ZL8h2At_5klW3GRQ4JsYEmKFXuykBvVoG-_s2LV9bDcj6dXgXmZUkRI0bETXtvrWu_o0GbyFnCB9PJSaO_eXRIRhqv_iXTrs0ODxfggovb7tNxXDw_xdINhcj7fzr6NWSQN0X9YsLjdSlfNmHJbvSS7T1VcrE9H2h8Xg/s320/IMG-20250217-WA0075.jpg.jpg" alt="Photo 5" onclick="openFullView(4)">
+        <p>Jelly chocolates</p>
+		<p>Price: ₹100 to ₹1000</p>
+			<a href="orderfrom.html"><button class="Get ditails">order now</button></a>
+    </div>
+</div>
+
+<!-- Lightbox for full image view -->
+<div id="lightbox" class="lightbox">
+    <button class="close-btn" onclick="closeFullView()">✖ Close</button>
+    <button class="prev-btn" onclick="prevImage()">⬅ Prev</button>
+    <img id="fullImage" class="full-img">
+    <p id="fullImageName" class="image-name"></p>
+    <button class="next-btn" onclick="nextImage()">Next ➡</button>
+</div>
+
+ <div class="section">
+        <h2>Our Specialties</h2>
+        <ul>
+            <li>🥜 <strong>Plain Chana</strong> Simple roasted or boiled chickpeas without any seasoning, great as a healthy snack or ingredient in various dishes.</li>
+            <li>🌶️<strong>Masala Chana</strong> Chickpeas seasoned with a mix of Indian spices like cumin, coriander, turmeric, and chili powder, giving them a flavorful and aromatic taste.</li>
+            <li>🔥 <strong>Peri-Peri Chana</strong> Spicy and tangy chickpeas infused with peri-peri seasoning, which typically includes paprika, garlic, chili flakes, and lemon zest for a fiery kick.</li>
+            <li>🍛<strong>Chole Chana</strong>A popular North Indian dish where chickpeas are cooked in a rich, spicy, and tangy tomato-based gravy with traditional Indian spices. </li>
+            <li>🧄<strong>Garlic Chana </strong>Chickpeas flavored with roasted or fried garlic, giving them a bold and savory taste, often enjoyed as a crunchy snack or stir-fried side dish. </li>
+			 <li>🍋<strong>Lemon Chana </strong> Chickpeas seasoned with lemon juice, salt, and mild spices, offering a tangy and refreshing flavor, perfect for a light and zesty snack.</li>
+			  <li>🎁 <strong>Chikki </strong>is a traditional Indian sweet made from jaggery (gur) and nuts or seeds, most commonly peanuts (moongfali chikki). It's a crunchy and nutritious snack enjoyed during winter, especially during Makar Sankranti. </li>
+			   <li>Peanut Chikki – Made with roasted peanuts and jaggery, the most popular variety.</li>
+<li>Til (Sesame) Chikki – Made with sesame seeds and jaggery, offering a nutty flavor.</li>
+<li>Dry Fruit Chikki – A mix of almonds, cashews, pistachios, and sometimes figs or dates.</li>
+<li>Coconut Chikki – Made with grated coconut and jaggery for a rich and sweet taste.</li>
+<li>Mix Seeds Chikki – Contains flaxseeds, pumpkin seeds, sunflower seeds, and jaggery for a healthy snack.</li>
+<li>Chocolate Chikki – A fusion version with cocoa or chocolate syrup added to the traditional chikki. </li>
+			    <li>🍏 <strong>Kacchi Kairi (Raw Mango) </strong>A tangy and slightly sour flavor, often used in summer drinks, candies, and chaat masala for a refreshing kick. </li>
+				 <li>🍓 <strong>Strawberry</strong>A juicy, slightly tart, and sweet flavor, popular in candies, milkshakes, and jams. </li>
+				  <li>🌰<strong>Imli (Tamarind)</strong> A sour-sweet and tangy flavor, widely used in chutneys, golgappa water, and candies for a bold taste. </li>
+				   <li>🍐 <strong>Guava</strong> A mild, sweet, and slightly tangy flavor, commonly used in juices, candies, and jams. </li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>Our Legacy & Trust</h2>
+        <p class="highlight">With over two decades of experience, Sahyadri Chana Chikki has become synonymous with <strong>authenticity, taste, and quality</strong>. Whether you’re a first-time visitor or a loyal customer, our sweets promise to leave you craving for more.</p>
+    </div>
+
+    </div>
+ <script>
+   function goBack() {
+            window.history.back();
+        }
+ const images = [
+        { src: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjK3Lls1lZgvXFy8436jWVIdFdhDhWdsP7fXos0xeKwIXv9jV93sQmScBD0Bij21meB9jmuQeV8KpqFIjcPKpOJOA_URaNLCGJ7GB0obyqPNsYGap06CCttzJAm4uflgekOgnZPyrEDKckH0AImlZEBTl67PlQ0ZpRiLxTXXXsySm76tQaHvEF3fFui9dc/s320/IMG-20250217-WA0070.jpg.jpg", name: "plain chana" },
+        { src: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpSqnKbw1h_AHJlQtit-Cu42qJ2PLLiVmg_NQ3BuwiXgXKuoRoVBVpBGsNX9wll4ZIJt8-oC52Ytqr2q3j5WOrDilMFIwGB61_BEbUDRcmLbIbs2tKz0dE05kfh4b7o1q7bRtwf_Y-J5h3-kfboz7eywPC9MmzhqOTgKA4G6jT4H6KOp2wqu57c-R7ZD0/s320/IMG-20250217-WA0041.jpg.jpg", name: "All flour chana" },
+        { src: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhr8YwHigjsdwsfNf6urObZGuV1dJ6c5499dGKbBetTqDO41jbqtfPj-b6Z2_tJgawDRpHgpdz4bLr60GgqONu234-y0vzWxuS4okaYFwKOQi0BdU9dvmECcbG2ZJwPAVM1ERJ1yh5n8Srn3wbtuuEcLys9j4gKQE5UfjV7ikKLBofIrD4hRlmZ5Ds-20g/s320/IMG-20250217-WA0043.jpg.jpg", name: "Chikki" },
+        { src: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcyU2Aj8DPWSlxhMufqJ8B-9_SN4uwBN36DxbUPlEjMDec6SKfdMlQQPuqVLSINLX5ifm9rcKG_EVvCTXn83eJM7LxCQmKXZpBu7YIvRoPbIugO0-Uo7rsr1w2y8Ir4O3BwkYBcbo3_hyphenhypheniuYPoAycSDK7802YkZAUud527UBLx57DSdXxyuJV1gPS2TCw/s320/IMG-20250217-WA0044.jpg.jpg", name: "Chat Chole" },
+        { src: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhX2TboULS_UsbWiPE2gRwOAi-ZL8h2At_5klW3GRQ4JsYEmKFXuykBvVoG-_s2LV9bDcj6dXgXmZUkRI0bETXtvrWu_o0GbyFnCB9PJSaO_eXRIRhqv_iXTrs0ODxfggovb7tNxXDw_xdINhcj7fzr6NWSQN0X9YsLjdSlfNmHJbvSS7T1VcrE9H2h8Xg/s320/IMG-20250217-WA0075.jpg.jpg", name: "Jelly chocolates" }
+    ];
+
+    let currentIndex = 0;
+
+    function openFullView(index) {
+        currentIndex = index;
+        document.getElementById("fullImage").src = images[index].src;
+        document.getElementById("fullImageName").innerText = images[index].name;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeFullView() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+        openFullView(currentIndex);
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+        openFullView(currentIndex);
+    }
+
+          function toggleShare() {
+        var shareOptions = document.getElementById("shareOptions");
+        shareOptions.style.display = (shareOptions.style.display === "flex") ? "none" : "flex";
+    }
+
+    function copyLink() {
+        navigator.clipboard.writeText("https://yourwebsite.com");
+        alert("Link copied to clipboard!");
+    }
+	
+	
+	function addComment(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById("username").value.trim();
+        const comment = document.getElementById("usercomment").value.trim();
+        if (!name || !comment) {
+            alert("Please fill in both fields.");
+            return;
+        }
+
+        const commentList = document.getElementById("commentList");
+        const newComment = document.createElement("li");
+        newComment.classList.add("comment-item");
+        newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+
+        commentList.appendChild(newComment);
+
+        document.getElementById("username").value = "";
+        document.getElementById("usercomment").value = "";
+    }
+    </script>
+</body>
+</html>
+

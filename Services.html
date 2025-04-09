@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mahabaleshwar Online Mart
+</title>
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: "Nunito", sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #0077b6;
+}
+
+.navbar img {
+  height: 60px;
+}
+
+.navbar .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar .menu li {
+  margin: 0 15px;
+}
+
+.navbar .menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar .menu a:hover {
+  color: #ffd60a;
+}
+
+.navbar .menu-icon {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background: #c6fbfa ;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .navbar .menu.show {
+    display: flex;
+  }
+  .navbar .menu li {
+    margin: 15px 0;
+  }
+  .navbar .menu-icon {
+    display: block;
+  }
+}
+section {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 0 2em;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.column {
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .column {
+        flex: 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .column {
+        flex: 0 33.33%;
+        max-width: 33.33%;
+    }
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    padding: 2em 1.5em;
+    background: linear-gradient(#ffffff 50%, #2c7bfe 50%);
+    background-size: 100% 200%;
+    background-position: 0 2.5%;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.card:hover {
+    background-position: 0 100%;
+}
+
+.card:hover .icon-wrapper {
+    background-color: #ffffff;
+    color: #2c7bfe;
+}
+
+.card:hover h3, .card:hover p {
+    color: #ffffff;
+}
+
+.icon-wrapper {
+    background-color: #2c7bfe;
+    position: relative;
+    margin: auto;
+    font-size: 30px;
+    height: 2.5em;
+    width: 2.5em;
+    color: #ffffff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: 0.5s;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f1940;
+    margin: 1em 0;
+}
+
+p {
+    color: #575a7b;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+}
+ .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            text-align: center;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .gallery-caption {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+		/* Call to Action */
+.cta {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color
+	}
+	.about-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .about-box {
+        flex: 1;
+        min-width: 300px;
+        padding: 20px;
+        background-color: #c6fbfa;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .heading {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .description {
+        font-size: 16px;
+        color: #555;
+    }
+
+.social-links,
+.footer {
+  background-color: #24262b;
+  color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 15px;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-col h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #ffd60a;
+  margin: 10px auto;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #bbbbbb;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffd60a;
+  padding-left: 5px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  background-color: #ffd60a;
+  color: #24262b;
+}
+
+@media (max-width: 768px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  background: #1d1f23;
+  color: #bbbbbb;
+  font-size: 14px;
+}
+@media (max-width: 530px) {
+  .suform-container,
+  .loginform-container {
+    background-color: rgba(54, 48, 87, 0.8);
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 11px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    border: 5px solid white;
+    z-index: 1111;
+    padding: 1rem;
+    transition: 1s all;
+  }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+	
+<nav class="navbar">
+ <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEja9QnExtlKaOCF_oQ-2y2E_-uB8zYpZYYcRyy86slIIyCAWJAsW4j5QILds6l2bbGQkPN1NbHGWnE-k1SZ0fj-zilrfBoLAg7CH7hPE9dqF0JKK0o-v1o-3Z9ij8-woTlMoThiyr05HX6f7WpCDq-4gbkIBwEjrLkxfut0lBzJhOqlQU1gdpmSYb8cMx8/s320/1334.png" 
+ alt="logo">
+  <ul class="menu" id="menu">
+     <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+	 <li><a href="shops.html">Shops</a></li>
+	  <li><a href="services.html">Services</a></li>
+	  	<li><a href="gallery.html">Gallery</a></li>
+	<li><a href="feedback.html">Feedback</a></li>
+		 <li><a href="Faq.html">FAQ</a></li>
+		 <li><a href="https://mahabaleshwaremarketing.blogspot.com/2025/03/mahabaleshwar-e-marketing.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+	<li><a href="admin.html">Admin</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+</nav>
+<hr>
+<br>
+ <section>
+        <div class="row">
+            <h2 class="section-heading">Our Services</h2>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>marketing</h3>
+                    <p>Welcome to Mahabaleshwar Online Mart
+ – Your Gateway to Local Treasures!
+
+Nestled in the lush greenery and serene beauty of the Western Ghats, Mahabaleshwar is not just a hill station; 
+it’s a thriving hub of unique small businesses.</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-brush"></i>
+                    </div>
+                    <h3>job of roikarer</h3>
+                    <p>TJoin the Team at Roikarer: Empowering Local Businesses in Mahabaleshwar
+
+At Roikarer Mahabaleshwar e-Marketplace, we are on a mission to revolutionize how small businesses in 
+Mahabaleshwar connect with customers and thrive in today’s digital world.</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Exibition</h3>
+                    <p>Experience the Essence of Mahabaleshwar at the Exhibition by Mahabaleshwar e-Marketplace!
+
+Join us in celebrating the rich heritage, vibrant culture, and entrepreneurial spirit of Mahabaleshwar at the Mahabaleshwar 
+e-Marketplace Exhibition. </p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-truck-pickup"></i>
+                    </div>
+                    <h3> E-commerce hub online selling</h3>
+                    <p>
+Welcome to Mahabaleshwar e-Marketplace – Your Ultimate Online Shopping Hub
+
+Discover the charm and creativity of Mahabaleshwar, right from the comfort of your home.</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3>Taxi</h3>
+                    <p>Explore Mahabaleshwar with Ease – Book a Taxi with Mahabaleshwar e-Marketplace
+
+Welcome to Mahabaleshwar e-Marketplace, your trusted hub for connecting with reliable taxi services in Mahabaleshwar.</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3> Hotel</h3>
+                    <p>Welcome to Mahabaleshwar Online Mart
+ – Your Gateway to the Best Hotels in Mahabaleshwar
+
+Plan your stay in the scenic hill station of Mahabaleshwar with ease and convenience! At Mahabaleshwar e-Marketplace, we provide a
+ curated listing of local hotels, boutique stays, homestays, and resorts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+	<section>
+    <div class="about-container">
+        <div class="about-box">
+            <h2 class="heading">Join Us!</h2>
+            <p class="description">If you are a business owner in Mahabaleshwar, we invite you to join our community of local enterprises. With our user-friendly platform, you can expand your reach and grow your business, all while promoting the charm and uniqueness of Mahabaleshwar to the world.</p>
+        </div>
+        <div class="about-box">
+            <p class="description">Whether you're a shopper or a business owner, Mahabaleshwar eMarketplace is here to bring you closer to the best our town has to offer. Explore, shop, and support local businesses today!</p>
+        </div>
+    </div>
+</section>
+	
+	
+			<footer class="footer">
+  <div class="footer-container">
+
+    
+    <!-- Contact Section -->
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <p>📍 <a href="Mahabaleshwar,Maharashtra" style="color: #ffd60a;">Mahabaleshwar,Maharashtra</a></p>
+      <p>📞 <a href="tel:8262932945" style="color: #ffd60a;">8262932945</a></p>
+      <p>📧 <a href="mailto:lssproject05@gmail.com" style="color: #ffd60a;">lssproject05@gmail.com</a></p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-col">
+      <h3>Developers</h3>
+      <ul>
+        <li><a href="Developer.html">Developer</a></li>
+		</ul>
+    </div>
+</div>
+
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    &copy; 2025 Mahabaleshwar Online Mart
+ | MKSSS'S Maharshi Karve Mahila Mahavidyalay Satara.|Team Member Name - Laxmi Akkennawar | Sanika Ombale | Suhani Padale.
+  </div>
+</footer>
+<script>
+  function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+  }
+</script>
+
+    
+</body>
+</html>

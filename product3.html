@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mahabaleshwar Online Mart</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="css/orderfromstyle.css">
+</head>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px); /* Slide from left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: #333;
+            transition: transform 0.3s ease;
+        }
+        .header h1:hover {
+            transform: scale(1.05);
+        }
+        .header p {
+            color: #777;
+            margin: 5px 0;
+        }
+/* Slide-in animation for text on hover */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+p {
+    display: block;
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+    transition: transform 10s ease, opacity 0.5s ease;
+    opacity: 0.7;
+}
+
+p:hover {
+    animation: slideIn 0.2s ease-in-out;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+       .rating {
+    display: flex;
+    direction: row-reverse;
+    font-size: 30px;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.star {
+    color: #ddd;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effects */
+.rating .star:hover,
+.rating .star:hover ~ .star {
+    color: #f5a623;
+    transform: scale(1.2);
+}
+
+/* Selected state */
+.rating[data-selected] .star {
+    color: #f5a623;
+}
+
+.rating .star.active,
+.rating .star.active ~ .star {
+    color: #f5a623;
+}
+
+/* Smooth entry animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.star {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+     /* Centering the buttons */
+    .contact, .share-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    /* Contact & Share Buttons */
+    .contact a, .share-btn {
+        text-decoration: none;
+        font-size: 18px;
+        padding: 12px 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .contact a {
+        background: #28a745;
+        color: white;
+    }
+
+    .contact a:hover {
+        background: #218838;
+        transform: scale(1.05);
+    }
+
+    .share-btn {
+        background: #007bff;
+        color: white;
+    }
+
+    .share-btn:hover {
+        background: #0056b3;
+        transform: scale(1.05);
+    }
+
+    /* Share Options */
+    .share-options {
+        display: none;
+        position: relative;
+        top: 200%;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: column;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 10px;
+        animation: slideDown 0.3s ease-in-out;
+    }
+
+    /* Share Links */
+    .share-options a {
+        display: block;
+        text-decoration: none;
+        font-size: 16px;
+        color: #333;
+        background: #f1f1f1;
+        padding: 8px 15px;
+        margin: 5px 0;
+        border-radius: 5px;
+        transition: background 0.3s ease-in-out, transform 0.2s;
+    }
+
+    .share-options a:hover {
+        background: #ddd;
+        transform: scale(1.05);
+    }
+
+    /* Slide-down Animation */
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+        /* Info Section */
+        .info {
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .info p {
+            font-size: 14px;
+            color: #444;
+            margin: 5px 0;
+        }
+
+
+   /* Photo Grid */
+        .photos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .photo-item {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .photo-item img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .photo-item img:hover {
+    transform: rotate(15deg);
+        }
+button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #cc5200;
+}
+        /* Lightbox Full View */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: relative;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 0.3s forwards;
+        }
+
+        .full-img {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 10px;
+        }
+
+        .image-name {
+            color: white;
+            font-size: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Buttons */
+        .close-btn, .prev-btn, .next-btn {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+            border-radius: 5px;
+        }
+
+        .close-btn:hover, .prev-btn:hover, .next-btn:hover {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .close-btn {
+            top: 20px;
+            right: 20px;
+        }
+
+        .prev-btn {
+            left: 20px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+		 .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+		 .about-container {
+            max-width: 500px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #d35400;
+            text-align: center;
+        }
+        
+		   .specialties-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .specialties-container ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .specialties-container li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        h2 {
+            color: #d35400;
+        }
+       
+		
+    </style>
+</head>
+<body>
+  <button class="back-button" onclick="goBack()">Go Back</button>
+  
+ 
+	 <div class="container">
+        <h1>About Hanuman Shoes smart</h1>
+        <q>For the past 22 years,<strong>Jannat Kashmir Shwal Imp-Orium </strong>has been a 
+		symbol of authenticity and excellence in the 
+		world of Kashmiri shawls. Renowned for its high-quality 
+		craftsmanship, the store offers a rich 
+		collection of traditional Pashmina, wool,
+		and embroidered shawls, each reflecting
+		the heritage and artistry of Kashmir.</q>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Hanuman Shoes smart</h1>
+            <p><strong>Owner:</strong> Mr.mandar modan tambe</p>
+            <p><strong>Address:</strong> Main Market, Mahabaleshwar</p>
+            <p><strong>History:</strong> 75 year’s, known for its high quality and authenticity.</p>
+            <div class="rating" data-shop="1">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+        </div>
+
+       
+        <!-- Contact & Share Section -->
+<div class="contact">
+     <a href="tel:+917588384581">📞 Call Now</a>
+     <a href="tel:+917588384581">💬 WhatsApp</a>
+     
+		
+    <div class="share-container">
+        <button class="share-btn" onclick="toggleShare()">🔗 Share</button>
+        <div class="share-options" id="shareOptions">
+            <a href="https://wa.me/?text=Check%20out%20Shree%20Siddhnath%20Sales%20Corporation%20https://yourwebsite.com" target="_blank">📱 WhatsApp</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank">📘 Facebook</a>
+            <a href="https://twitter.com/intent/tweet?text=Check%20out%20Shree%20Siddhnath%20Sales%20Corporation%20https://yourwebsite.com" target="_blank">🐦 Twitter</a>
+            <a href="#" onclick="copyLink()">📋 Copy Link</a>
+        </div>
+    </div>
+</div>
+
+<!-- Image Grid -->
+<div class="photos">
+    <div class="photo-item">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqz4Gst9xH-V0ZYR5XzC6PZLjxpwT4hVXHcR6y9JIWLkgABaQtdhOwrEv5nmSGSxYP4OsMYCathPYDcURvFoLbUqk0o1Gll-AzIdWOo_jCYEktGT9PSl4kjsDvrEqVxv_8ql-JMRFYjbkB7IhGfmYlcYmwXs0M5dGV5_3t1W7TrlNqayeK0nxFZCmK3kY/s320/IMG-20250217-WA0059.jpg" alt="Photo 1" onclick="openFullView(0)">
+        <p>leather boot </p>
+		<p>Price: ₹1200 to 5500</p>
+			<a href="orderfrom.html"><button class="Get ditails">order now</button></a>
+    </div>
+    <div class="photo-item">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgA4zOHS_ZlUhSSpjRWkeUAnQr94Dtp7prb-9Czr3o2Ub1wqzKEsH6FWA7byifJBNs6npANipWIIbKiqwGGkmLNzyKIiM3FP8cLvKAwsdt4XnkAvyFjIqA5TVSdpxREuZmzDKmpUiU_f0fY54qEDjUp6w9r6NG7IMwi_-49ynQ67edg_DCV3wRmmCSAoNI/s320/IMG-20250217-WA0060.jpg" alt="Photo 2" onclick="openFullView(1)">
+        <p>Shoes</p>
+		<p>Price: ₹1000 to 2,500</p>
+			<a href="orderfrom.html"><button class="Get ditails">order now</button></a>
+    </div>
+    <div class="photo-item">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRtpxTWel2d_xYHXh1V41dcIBWHeDRI87SMUQ7Eo6irKh3oIdGRcpcunsYWRqz5YWb5MEJF4VAEEge2s7kxkOK6Wacep9rcNQgGmuoDHHOuqN50MTkF74NAWx7eGrSlWqIikiB6cBGzCNI15k2i6pWo7Ofb_qCenGbXUdWRbQSdvj-lNrkg3YYSIlPhuo/s320/IMG-20250217-WA0061.jpg" alt="Photo 3" onclick="openFullView(2)">
+        <p>handmade chappal </p>
+		<p>Price: ₹1200 to 1500</p>
+			<a href="orderfrom.html"><button class="Get ditails">order now</button></a>
+    </div>
+    <div class="photo-item">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhO1QezYht0LpjTBQpJ4aE-sTiJQm2cFO0yG0kJcC7fLzc-O5powzJymqqufayV-QbLwhyfVPjrSfuRA_WVNurZMntvroW7J1vVljrsII4qgjZJbdhl5YmAP7Pym3zyhOtumPHzBBTZ5U4yqAF21xMIDbglP5OSOLF6XGi0Lhys8SobcNg-cf7BE_99gdU/s320/IMG-20250217-WA0062.jpg" alt="Photo 4" onclick="openFullView(3)">
+        <p>Soft leather shoes</p>
+		<p>Price: ₹250 to 2000</p>
+			<a href="orderfrom.html"><button class="Get ditails">order now</button></a>
+    </div>
+    
+</div>
+
+<!-- Lightbox for full image view -->
+<div id="lightbox" class="lightbox">
+    <button class="close-btn" onclick="closeFullView()">✖ Close</button>
+    <button class="prev-btn" onclick="prevImage()">⬅ Prev</button>
+    <img id="fullImage" class="full-img">
+    <p id="fullImageName" class="image-name"></p>
+    <button class="next-btn" onclick="nextImage()">Next ➡</button>
+</div>
+
+ <div class="section">
+        <h2>Our Specialties</h2>
+        <ul>
+            <li>🥾<strong>Leather Boots</strong>Leather boots are sturdy, stylish, and long-lasting footwear made from high-quality leather.
+			They are often handcrafted and designed for durability, comfort, and style.</li>
+            <li>👟<strong>Shoes</strong>Shoes are more than just a necessity—they’re a statement of style, culture, and personality. From luxury heels to high-performance sneakers, 
+			shoes have played an essential role in history, fashion, and sports.</li>
+            <li>👞<strong>handmade chappal</strong>Handmade chappals are traditional, open-toe footwear made from leather or other natural materials.
+			They are common in South Asian and Middle Eastern cultures.</li>
+            <li>👢<strong>Soft leather shoes</strong> Soft leather shoes are a must-have in any wardrobe, combining comfort, flexibility, and elegance. Whether you’re wearing soft leather loafers, sneakers, or dress shoes, they provide a premium feel that molds to your feet over time.
+
+</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>Our Legacy & Trust</h2>
+        <p class="highlight">With over two decades of experience, Sahyadri Chana Chikki has become synonymous with <strong>authenticity, taste, and quality</strong>. Whether you’re a first-time visitor or a loyal customer, our sweets promise to leave you craving for more.</p>
+    </div>
+
+    </div>
+ <script>
+   function goBack() {
+            window.history.back();
+        }
+ const images = [
+       { src:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqz4Gst9xH-V0ZYR5XzC6PZLjxpwT4hVXHcR6y9JIWLkgABaQtdhOwrEv5nmSGSxYP4OsMYCathPYDcURvFoLbUqk0o1Gll-AzIdWOo_jCYEktGT9PSl4kjsDvrEqVxv_8ql-JMRFYjbkB7IhGfmYlcYmwXs0M5dGV5_3t1W7TrlNqayeK0nxFZCmK3kY/s320/IMG-20250217-WA0059.jpg", name: "leather boot" },
+        { src: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgA4zOHS_ZlUhSSpjRWkeUAnQr94Dtp7prb-9Czr3o2Ub1wqzKEsH6FWA7byifJBNs6npANipWIIbKiqwGGkmLNzyKIiM3FP8cLvKAwsdt4XnkAvyFjIqA5TVSdpxREuZmzDKmpUiU_f0fY54qEDjUp6w9r6NG7IMwi_-49ynQ67edg_DCV3wRmmCSAoNI/s320/IMG-20250217-WA0060.jpg", name: "Shoes" },
+        { src: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRtpxTWel2d_xYHXh1V41dcIBWHeDRI87SMUQ7Eo6irKh3oIdGRcpcunsYWRqz5YWb5MEJF4VAEEge2s7kxkOK6Wacep9rcNQgGmuoDHHOuqN50MTkF74NAWx7eGrSlWqIikiB6cBGzCNI15k2i6pWo7Ofb_qCenGbXUdWRbQSdvj-lNrkg3YYSIlPhuo/s320/IMG-20250217-WA0061.jpg", name: "handmade chappal " },
+        { src: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhO1QezYht0LpjTBQpJ4aE-sTiJQm2cFO0yG0kJcC7fLzc-O5powzJymqqufayV-QbLwhyfVPjrSfuRA_WVNurZMntvroW7J1vVljrsII4qgjZJbdhl5YmAP7Pym3zyhOtumPHzBBTZ5U4yqAF21xMIDbglP5OSOLF6XGi0Lhys8SobcNg-cf7BE_99gdU/s320/IMG-20250217-WA0062.jpg", name: "Soft leather shoes" },
+     
+    ];
+
+    let currentIndex = 0;
+
+    function openFullView(index) {
+        currentIndex = index;
+        document.getElementById("fullImage").src = images[index].src;
+        document.getElementById("fullImageName").innerText = images[index].name;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeFullView() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+        openFullView(currentIndex);
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+        openFullView(currentIndex);
+    }
+
+          function toggleShare() {
+        var shareOptions = document.getElementById("shareOptions");
+        shareOptions.style.display = (shareOptions.style.display === "flex") ? "none" : "flex";
+    }
+
+    function copyLink() {
+        navigator.clipboard.writeText("https://yourwebsite.com");
+        alert("Link copied to clipboard!");
+    }
+	
+	
+	function addComment(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById("username").value.trim();
+        const comment = document.getElementById("usercomment").value.trim();
+        if (!name || !comment) {
+            alert("Please fill in both fields.");
+            return;
+        }
+
+        const commentList = document.getElementById("commentList");
+        const newComment = document.createElement("li");
+        newComment.classList.add("comment-item");
+        newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+
+        commentList.appendChild(newComment);
+
+        document.getElementById("username").value = "";
+        document.getElementById("usercomment").value = "";
+    }
+    </script>
+</body>
+</html>
+

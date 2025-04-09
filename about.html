@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mahabaleshwar Online Mart
+</title>
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: "Nunito", sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #0077b6;
+}
+
+.navbar img {
+  height: 60px;
+}
+
+.navbar .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar .menu li {
+  margin: 0 15px;
+}
+
+.navbar .menu a {
+  text-decoration: none;
+  color:  black;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar .menu a:hover {
+  color: #ffd60a;
+}
+
+.navbar .menu-icon {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background: #c6fbfa ;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .navbar .menu.show {
+    display: flex;
+  }
+  .navbar .menu li {
+    margin: 15px 0;
+  }
+  .navbar .menu-icon {
+    display: block;
+  }
+}
+/* Hero Section */
+.hero {
+    background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQ2zYfiuLf5peMMi8Rj5GZ_IucW6DHTsU5NT8RYsdvkqCdV3tS60hKdybfacPZ1OF56LHzJ8jiNOPV8Anyq3INm8-iUzYSOtfpqxKH7_pzJsGrCRRn_6A784ioKmz5uKIS8UPZ6tvvhUXMHE-vY-A8o6q8x5mjNuZ13ofgJsDpBc6_kauDQ1aL8qKyjT4/w675-h610/120.jpg') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/* About Section */
+.about-section {
+    background: url('https://source.unsplash.com/1600x900/?technology,marketing') center/cover no-repeat;
+    padding: 80px 20px;
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Box Styling */
+.about-box {
+    background: #c6fbfa;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+/* Headings */
+.heading {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff5722;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.heading::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: #ff5722;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Description */
+.description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Grid Item */
+.grid-item {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid Item Headings */
+.grid-item h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Grid Item Paragraph */
+.grid-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Call to Action */
+.cta {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color
+	}
+	 /* Team section styling */
+        .team-section {
+            text-align: center;
+        }
+
+        .team-section h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .team-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .team-card img {
+            width: 100%;
+            border-radius: 50%;
+            max-width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .team-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .team-card p {
+            color: #777;
+            font-size: 1rem;
+        }
+.social-links,
+.footer {
+  background-color: #24262b;
+  color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 15px;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-col h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #ffd60a;
+  margin: 10px auto;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #bbbbbb;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffd60a;
+  padding-left: 5px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  background-color: #ffd60a;
+  color: #24262b;
+}
+
+@media (max-width: 768px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  background: #1d1f23;
+  color: #bbbbbb;
+  font-size: 14px;
+}
+@media (max-width: 530px) {
+  .suform-container,
+  .loginform-container {
+    background-color: rgba(54, 48, 87, 0.8);
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 11px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    border: 5px solid white;
+    z-index: 1111;
+    padding: 1rem;
+    transition: 1s all;
+  }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+	
+<nav class="navbar">
+ <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEja9QnExtlKaOCF_oQ-2y2E_-uB8zYpZYYcRyy86slIIyCAWJAsW4j5QILds6l2bbGQkPN1NbHGWnE-k1SZ0fj-zilrfBoLAg7CH7hPE9dqF0JKK0o-v1o-3Z9ij8-woTlMoThiyr05HX6f7WpCDq-4gbkIBwEjrLkxfut0lBzJhOqlQU1gdpmSYb8cMx8/s320/1334.png" 
+ alt="logo">
+  <ul class="menu" id="menu">
+     <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+	 <li><a href="shops.html">Shops</a></li>
+	  <li><a href="services.html">Services</a></li>
+	  	<li><a href="gallery.html">Gallery</a></li>
+	<li><a href="feedback.html">Feedback</a></li>
+		 <li><a href="Faq.html">FAQ</a></li>
+		 <li><a href="https://mahabaleshwaremarketing.blogspot.com/2025/03/mahabaleshwar-e-marketing.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+	<li><a href="admin.html">Admin</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+</nav>
+ <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About Mahabaleshwar Online Mart
+ </h1>
+            <p>Empowering Businesses with Digital Excellence</p>
+        </div>
+    </section>
+<!-- About Us Section -->
+<section class="about-section">
+        <div class="container">
+            <div class="about-box">
+                <h2 class="heading">Our Mission</h2>
+                <p class="description">At Mahabaleshwar Online Mart
+, our mission is simple: to connect customers with the heart and soul of Mahabaleshwar’s local businesses. We aim to provide small enterprises a platform where they can reach a larger audience, while offering visitors and residents an easy way to support local entrepreneurs and discover hidden gems in the town.</p>
+            </div>
+            <div class="about-box">
+                <h2 class="heading">What We Offer</h2>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <h3>Local Handicrafts</h3>
+                        <p>Discover beautifully crafted souvenirs, traditional art, and local artisan products.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Eco-Friendly Products</h3>
+                        <p>Bamboo straws, organic soaps, and recycled paper products</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Leather Bags </h3>
+                        <p>Timeless Craftsmanship from Mahabaleshwar</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Chana (Chickpeas)</h3>
+                        <p> Nutritious & Locally Sourced</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Leather Shoes</h3>
+                        <p>Handcrafted Elegance from Mahabaleshwar</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Clothing </h3>
+                        <p>Authentic & Trendy Fashion from Mahabaleshwar</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-box">
+                <h2 class="heading">Why Choose Us?</h2>
+                <ul class="description">
+                    <li><strong>Supporting Local Entrepreneurs:</strong> By using Mahabaleshwar eMarketplace, you are directly supporting local businesses and helping the community thrive.</li>
+                    <li><strong>Diverse Listings:</strong> Our platform hosts a variety of businesses, catering to different needs and tastes, ensuring there’s something for everyone.</li>
+                    <li><strong>Convenience:</strong> You can easily browse through businesses, read reviews, and contact service providers—all from the comfort of your home.</li>
+                    <li><strong>Trust & Authenticity:</strong> We ensure that all businesses listed on our platform meet high standards, offering quality products and services.</li>
+                </ul>
+            </div>
+            <div class="about-box">
+                <h2 class="heading">Join Us!</h2>
+                <p class="description">If you are a business owner in Mahabaleshwar, we invite you to join our community of local enterprises. With our user-friendly platform, you can expand your reach and grow your business, all while promoting the charm and uniqueness of Mahabaleshwar to the world.</p>
+                <p class="description">Whether you're a shopper or a business owner, Mahabaleshwar eMarketplace is here to bring you closer to the best our town has to offer. Explore, shop, and support local businesses today!</p>
+            </div>
+        </div>
+    </section>
+        
+
+        <!-- Call to Action -->
+        <div class="cta">
+            <h2 class="heading">🍃</h2>
+        </div>
+    </div>
+</section>
+<!-- Team Section -->
+        <div class="team-section">
+            <h3>Meet Our Developer Team</h3>
+            <div class="team-cards">
+                <!-- Team Member 1 -->
+                <div class="team-card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjWcHrxVqdMwCDSA5wlVsXHJxDp384prixFmWleGTbvF8IOqurN5Mvuao29GTJv6YYO94l8wz8W-RRU8WEYmsbbxf5sc9sVjH3JvrRGqK64mtdcpzPbN3mcKZynREfZVRVqwSb2JP3_CF6ut9toJcgW0c8rLnGgXPThd7blVDNWwfgXLCtokthYZTjqv1s/s320/113.jpg" alt="Team Member 1">
+                    <h4>Suhani Padale</h4>
+                    <p>BCA student</p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3L8BOMJCQfapeByswfPVo1Fa8ggyMoUuGKpBWBlxeohpsZ1bdcDBVsS-iNTE00uLVyyXnQOkTwyjzOBPM0OG1XZqyLZIN2xjRM7V0BE3ykhMoZPOyPZ3T9Ih77x-H4oiTpkw6TrnY_hYVjfaW4hkfseNSkS__nAwvCZZBhp_yOL3RBAR1SYRQ3UMlRiQ/s320/45454.jpg" alt="Team Member 2">
+                    <h4>Laxmi Akkennavar</h4>
+                    <p>BCA student</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDWYmu5jrPVklxSuoRTHiuM8hM7xq6BmQ658MACdidpvF-gnR5hSyJ5RwrZFFuM2QV8jT2_hNOOgsCfvv6yKezt3FNtFQn2TG_-pS6nD8_2tFxtejbIW2xCIfvKRDm3coYdRjeJaoOGvc0D2uxHWJ-JD5GDMOq7jHPBsLiPTuGOwQhYgAPL0VClQhzg34/s320/143222.jpg" alt="Team Member 3">
+                    <h4>Sanika Ombale</h4>
+                    <p>BCA student</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+
+			<footer class="footer">
+  <div class="footer-container">
+
+    
+    <!-- Contact Section -->
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <p>📍<a href="Mahabaleshwar,Maharashtra" style="color: #ffd60a;">Mahabaleshwar,Maharashtra</a></p>
+      <p>📞<a href="tel:826xxxxxxx" style="color: #ffd60a;">826xxxxxxx</a></p>
+      <p>📧<a href="mailto:lssproject05@gmail.com" style="color: #ffd60a;">lssproject05@gmail.com</a></p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-col">
+     <h3>Developers</h3>
+      <ul>
+        <li><a href="Developer.html">Developer</a></li>
+		</ul>
+    </div>
+</div>
+
+
+		
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    &copy; 2025 Mahabaleshwar Online Mart
+ | MKSSS'S Maharshi Karve Mahila Mahavidyalay Satara.|Team Member Name - Laxmi Akkennawar | Sanika Ombale | Suhani Padale.
+  </div>
+</footer>
+<script>
+  function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutSection = document.querySelector(".about-section");
+
+    function revealOnScroll() {
+        const sectionTop = aboutSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (sectionTop < windowHeight - 100) {
+            aboutSection.classList.add("show");
+        }
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+});
+</script>
+
+    
+</body>
+</html>

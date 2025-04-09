@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mahabaleshwar Online Mart
+</title>
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: "Nunito", sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #0077b6;
+}
+
+.navbar img {
+  height: 60px;
+}
+
+.navbar .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar .menu li {
+  margin: 0 15px;
+}
+
+.navbar .menu a {
+  text-decoration: none;
+  color:  black;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar .menu a:hover {
+  color: #ffd60a;
+}
+
+.navbar .menu-icon {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background: #c6fbfa ;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .navbar .menu.show {
+    display: flex;
+  }
+  .navbar .menu li {
+    margin: 15px 0;
+  }
+  .navbar .menu-icon {
+    display: block;
+  }
+}
+/* Product Categories */
+#shop-all {
+    padding: 2em 1em;
+    text-align: center;
+}
+
+#shop-all h2 {
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+
+.product-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.category {
+    background-color: #c6fbfa;
+    padding: 1em 2em;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.category:hover {
+    background-color: #ddd;
+}
+ 
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            text-align: center;
+            background: #c6fbfa;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .gallery-caption {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: white;
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #c6fbfa;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+        }
+.social-links,
+.footer {
+  background-color: #24262b;
+  color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 15px;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-col h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #ffd60a;
+  margin: 10px auto;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #bbbbbb;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffd60a;
+  padding-left: 5px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  background-color: #ffd60a;
+  color: #24262b;
+}
+
+@media (max-width: 768px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  background: #1d1f23;
+  color: #bbbbbb;
+  font-size: 14px;
+}
+@media (max-width: 530px) {
+  .suform-container,
+  .loginform-container {
+    background-color: rgba(54, 48, 87, 0.8);
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 11px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    border: 5px solid white;
+    z-index: 1111;
+    padding: 1rem;
+    transition: 1s all;
+  }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+	
+<nav class="navbar">
+ <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEja9QnExtlKaOCF_oQ-2y2E_-uB8zYpZYYcRyy86slIIyCAWJAsW4j5QILds6l2bbGQkPN1NbHGWnE-k1SZ0fj-zilrfBoLAg7CH7hPE9dqF0JKK0o-v1o-3Z9ij8-woTlMoThiyr05HX6f7WpCDq-4gbkIBwEjrLkxfut0lBzJhOqlQU1gdpmSYb8cMx8/s320/1334.png" 
+ alt="logo">
+  <ul class="menu" id="menu">
+   <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+	 <li><a href="shops.html">Shops</a></li>
+	  <li><a href="services.html">Services</a></li>
+	  	<li><a href="gallery.html">Gallery</a></li>
+	<li><a href="feedback.html">Feedback</a></li>
+		 <li><a href="Faq.html">FAQ</a></li>
+		 <li><a href="https://mahabaleshwaremarketing.blogspot.com/2025/03/mahabaleshwar-e-marketing.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+	<li><a href="admin.html">Admin</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+</nav>
+
+   <div class="content">
+        <p>Welcome to Mahabaleshwar Online Mart
+ Gallery
+Discover the best of Mahabaleshwar’s vibrant small businesses, all in one place! Our gallery showcases the unique offerings from local artisans, craftsmen, and entrepreneurs who
+ are passionate about their products. Each listing provides you with an authentic piece of Mahabaleshwar, directly from the hands of talented creators.</p>
+    </div>
+	
+    <!-- Product Categories -->
+    <section id="shop-all">
+        <h2>Products</h2>
+        <div class="product-categories">
+            <a href="#chana" class="category">Chana</a>
+            <a href="#jams-and-spreads" class="category">jelly Chocolates & juice</a>
+            <a href="#mixers" class="category">Wooden bags</a>
+            <a href="#fruit-chews" class="category">Clothes</a>
+            <a href="#snacks" class="category">Leather Wallet</a>
+            <a href="#chocolates" class="category">Handmade Chappal</a>
+            <a href="#occasion" class="category">Cotten bags</a>
+            <a href="#combo" class="category">Pashmina Shawls</a>
+        </div>
+    </section>
+    
+    <div class="gallery">
+        <div class="gallery-item">
+            <a href="#img1"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-4qXIrBZDDpXw5kmWoND5PiWqz5dHufohFexMt9foWtAfX86vrPPuILeQDgC3YWZiZ0gqz3KArOxysBmK4qrkPx5CWr-7GehVXy0x994hqaMeZqdgQ-XdkCJD8wsU36H6UXMyCTnE3bJG4e6X7m34rl0X0kocU13ypw-trNyfVEhiGOnUDwTz3m_VWkk/w171-h215/IMG-20250217-WA0036.jpg" alt="Mahabaleshwar View 1"></a>
+            <p class="gallery-caption">Jelly Choclates</p>
+        </div>
+        <div class="gallery-item">
+            <a href="#img2"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfawtFKXYSC-RFnG167tdCw8dNG-bQX5976s_kK0sn4-ukC8enFFdMwV4RoADw4r-t6Szr32kukkulKWglevWDSwTFKZdXE8-MO2E6HCwlnBgcOZxr6qMukK4U65VCP2vscEjB9oHnW7XAz6IpAWZv-Yxkyrx7TQ1iEGQXwc1lpJAEL3MzoX4p-J-Cy0w/w192-h224/IMG-20250217-WA0040.jpg" alt="Mahabaleshwar View 2"></a>
+            <p class="gallery-caption">Chikki</p>
+        </div>
+        <div class="gallery-item">
+            <a href="#img3"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpSqnKbw1h_AHJlQtit-Cu42qJ2PLLiVmg_NQ3BuwiXgXKuoRoVBVpBGsNX9wll4ZIJt8-oC52Ytqr2q3j5WOrDilMFIwGB61_BEbUDRcmLbIbs2tKz0dE05kfh4b7o1q7bRtwf_Y-J5h3-kfboz7eywPC9MmzhqOTgKA4G6jT4H6KOp2wqu57c-R7ZD0/s320/IMG-20250217-WA0041.jpg" alt="Mahabaleshwar View 3"></a>
+            <p class="gallery-caption">Chana</p>
+        </div>
+        <div class="gallery-item">
+            <a href="#img4"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcyU2Aj8DPWSlxhMufqJ8B-9_SN4uwBN36DxbUPlEjMDec6SKfdMlQQPuqVLSINLX5ifm9rcKG_EVvCTXn83eJM7LxCQmKXZpBu7YIvRoPbIugO0-Uo7rsr1w2y8Ir4O3BwkYBcbo3_hyphenhypheniuYPoAycSDK7802YkZAUud527UBLx57DSdXxyuJV1gPS2TCw/s320/IMG-20250217-WA0044.jpg" alt="Mahabaleshwar View 4"></a>
+            <p class="gallery-caption">Chat Chole</p>
+        </div>
+        <div class="gallery-item">
+            <a href="#img5"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtgW1hAw0-V-DHX0vw2MOQ9bk9YBBHwt6LOSgCUqex4W0qkNFhXjP8iJ5VerZxOFkwD_rupYysLO9W_a7YAjLf9sIHDjnYF3ZEAPn2qjXK56GOIR528s15oWm6Jg43zUsUHRcqavDLWDxYUSVjn9Bm9bPF1ELbbjvFIcNYvTj58Hg3T0t8HW_OJiWoykQ/s320/IMG-20250217-WA0046.jpg" alt="Mahabaleshwar View 5"></a>
+            <p class="gallery-caption">Round Bags</p>
+        </div>
+        <div class="gallery-item">
+            <a href="#img6"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGBrgSjjyi44sMuKc7sfSFEbzT4_MfNqLqpZ-GG6OXsfnwAWtxyuzk_6UL65ZvDmGf4p29CWmNiJnho3VgTpiJ8aLXIfJLni2N94NDD9TivuR57hXCqIWEdowzMnmWzOfElf234eSpeA3iNj0TKu8iqiWuMDPsAli5jOXeJlAIMCDOlZFlNPq2EM3cF10/s320/IMG-20250217-WA0047.jpg" alt="Mahabaleshwar View 6"></a>
+            <p class="gallery-caption">Leather Wallets</p>
+        </div>
+		<div class="gallery-item">
+            <a href="#img1"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvBBvjmxYY4IbCmngIp8qQVJVEacwtuprj2MSO1sbAxITBZ4NTL81GNZSNkPytDMsSWzYvaJbQ_aOvxYk_Dk2oj8l0o-s2-USYe0gk2V97ZBnlBugaHZB7mi3xrRwYeGylIoLMQA4sklfwBhLrU0LeNNTd5eDKEjZOxDqo7-ioc2N17dCwObNoghlcrBc/s320/IMG-20250217-WA0049.jpg" alt="Mahabaleshwar View 1"></a>
+            <p class="gallery-caption">Bags</p>
+        </div>
+        <div class="gallery-item">
+            <a href="#img2"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRtpxTWel2d_xYHXh1V41dcIBWHeDRI87SMUQ7Eo6irKh3oIdGRcpcunsYWRqz5YWb5MEJF4VAEEge2s7kxkOK6Wacep9rcNQgGmuoDHHOuqN50MTkF74NAWx7eGrSlWqIikiB6cBGzCNI15k2i6pWo7Ofb_qCenGbXUdWRbQSdvj-lNrkg3YYSIlPhuo/s320/IMG-20250217-WA0061.jpg" alt="Mahabaleshwar View 2"></a>
+            <p class="gallery-caption">Handmade Chappal</p>
+        </div>
+        <div class="gallery-item">
+            <a href="#img3"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhO1QezYht0LpjTBQpJ4aE-sTiJQm2cFO0yG0kJcC7fLzc-O5powzJymqqufayV-QbLwhyfVPjrSfuRA_WVNurZMntvroW7J1vVljrsII4qgjZJbdhl5YmAP7Pym3zyhOtumPHzBBTZ5U4yqAF21xMIDbglP5OSOLF6XGi0Lhys8SobcNg-cf7BE_99gdU/s320/IMG-20250217-WA0062.jpg" alt="Mahabaleshwar View 3"></a>
+            <p class="gallery-caption">Leather Shoes</p>
+        </div>
+        <div class="gallery-item">
+            <a href="#img4"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7YkD0iK9JBuk5jXRIHjBzyTQeGQzVGyXFd98Ttw8T1znvQTtZYH2jfVG6vNnVbcMacvOaW9BMo88Ibs_eOYH0_tJ62t_fvJv7284LEbpML-YuZ6toyqzciAnB-bpkoBiCXip3CSXDZWJ13RfhLLgEsPUg9kY0ae3Yfd_xZ-CpNat2wARTFxCKJBBZUYQ/s320/IMG-20250217-WA0063.jpg" alt="Mahabaleshwar View 4"></a>
+            <p class="gallery-caption">Paithni Bags</p>
+        </div>
+        <div class="gallery-item">
+            <a href="#img5"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNKwJTTrcmgnSjh2H5C9BHqOqtxV8to0mVvPesJALLFRPDmAe_g2AN4Y7Az_zmhAdSLMwmggSq7BAeETShTutz8YJQexlOc03XOH1x5eS4CtWqkO2-XdoXNBlMz3FgjCRspAl0yOIHcREehEpjrz4I0c0NRfhF3-79vF45z_fIwP1FoLLFxlqFEtwjrNc/s320/IMG-20250217-WA0065.jpg" alt="Mahabaleshwar View 5"></a>
+            <p class="gallery-caption">Shawal</p>
+        </div>
+        <div class="gallery-item">
+            <a href="#img6"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitQFKQBvp58bH7Q4oFtyMLF24SA-cVr1Fr6ejyFy9wDZq-nzkHTpFg5D-6L87QXPHtr1URpvi3dbZV6sV7Z7oLOLza6y5fOHQR4taTer4z-fa5oSk3FGXb-vZX8uiC9YkENrH3nRGhHFZAhyphenhyphenmiYtvkKwuWHI9s8czW-0UbN-Q6CgWK40f0BSyvNz2uXKY/s320/IMG-20250217-WA0074.jpg" alt="Mahabaleshwar View 6"></a>
+            <p class="gallery-caption">Suits</p>
+        </div>
+		<div class="gallery-item">
+            <a href="#img6"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqIyfvICBn4Vevr6jBwWXt1xHX7Vht1BenEjYWxO1l_zMZYi9gwV_OFHehyphenhyphenFrOhV4pZlHaJapN7RCbozQTtWh3tQzQNP1Alr5R0_fJ2-gzgD-mrTeR2imm1bxuRo3XSrqKawPYNPhz92o1PM9ehyphenhyphenyL_v_YousgQnCpZ3_VCi_UyP9F8215yzUnE_w3s38/s320/IMG-20250217-WA0078.jpg" alt="Mahabaleshwar View 6"></a>
+            <p class="gallery-caption">Kurties</p>
+        </div>
+		<div class="gallery-item">
+            <a href="#img6"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjK3Lls1lZgvXFy8436jWVIdFdhDhWdsP7fXos0xeKwIXv9jV93sQmScBD0Bij21meB9jmuQeV8KpqFIjcPKpOJOA_URaNLCGJ7GB0obyqPNsYGap06CCttzJAm4uflgekOgnZPyrEDKckH0AImlZEBTl67PlQ0ZpRiLxTXXXsySm76tQaHvEF3fFui9dc/s320/IMG-20250217-WA0070.jpg" alt="Mahabaleshwar View 6"></a>
+            <p class="gallery-caption">Chana</p>
+        </div>
+		<div class="gallery-item">
+            <a href="#img6"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCKEsoFfv1DHbpPnbUZyT774XhGxjcW5Ol-KlirmQ44JfrS2_utVe-RvL4LGUEXd6BJa4zoPK4nTRh-7flN6eomfRMSxBS1oMGwVp6OMRJHHAKAODNlbaMFCcjnn3xt5YXtVHf-KuBjW5GKMyaJGDKMGRmwXjYwcCkFb1nPh2ZVgO_OpXCBOJP12UlA2Q/s320/IMG-20250217-WA0054.jpg" alt="Mahabaleshwar View 6"></a>
+            <p class="gallery-caption">Handmade </p>
+        </div>
+    </div>
+	
+	<div class="content">
+        <p>Join the Mahabaleshwar Online Mart
+ Today!
+Start exploring today and bring home a piece of Mahabaleshwar’s magic! Whether you’re looking for gifts, personal treats, or something special for your home, 
+the Mahabaleshwar E-Marketplace has something to suit every taste.
+ Shop now and support small businesses that make Mahabaleshwar the wonderful place it is!</p>
+    </div>
+	
+	
+			<footer class="footer">
+  <div class="footer-container">
+
+    
+    <!-- Contact Section -->
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <p>📍 <a href="Mahabaleshwar,Maharashtra" style="color: #ffd60a;">Mahabaleshwar,Maharashtra</a></p>
+      <p>📞 <a href="tel:8262932945" style="color: #ffd60a;">8262932945</a></p>
+      <p>📧 <a href="mailto:lssproject05@gmail.com" style="color: #ffd60a;">lssproject05@gmail.com</a></p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-col">
+     <h3>Developers</h3>
+      <ul>
+        <li><a href="Developer.html">Developer</a></li>
+		</ul>
+    </div>
+</div>
+
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    &copy; 2025 Mahabaleshwar Online Mart
+ | MKSSS'S Maharshi Karve Mahila Mahavidyalay Satara.|Team Member Name - Laxmi Akkennawar | Sanika Ombale | Suhani Padale.
+  </div>
+</footer>
+<script>
+  function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+  }
+</script>
+
+    
+</body>
+</html>

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mahabaleshwar Online Mart
+</title>
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: "Nunito", sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #0077b6;
+}
+
+.navbar img {
+  height: 60px;
+}
+
+.navbar .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar .menu li {
+  margin: 0 15px;
+}
+
+.navbar .menu a {
+  text-decoration: none;
+  color:  black;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar .menu a:hover {
+  color: #ffd60a;
+}
+
+.navbar .menu-icon {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background: #c6fbfa ;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+   .navbar .menu.show {
+    display: flex;
+  }
+  .navbar .menu li {
+    margin: 15px 0;
+  }
+  .navbar .menu-icon {
+    display: block;
+  }
+}
+}
+@media (max-width: 768px) {
+    .menu-bar {
+        display: block;
+        width: 100%;
+        position: relative; /* Ensures it stays in the document flow */
+        margin-top: 10px; /* Adds spacing below the title */
+    }
+
+    .intro-title {
+        text-align: center; /* Keeps the title centered */
+    }
+}
+		.intro-container {
+    text-align: center;
+    background-color: #ffefd5; /* Light peach background */
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.intro-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #d2691e; /* Chocolate color */
+    margin-bottom: 10px;
+    animation: bounce 2s infinite alternate;
+}
+
+.intro-text {
+    font-size: 18px;
+    color: #444;
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 1.6;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(10px); }
+}
+
+        h2 {
+            font-size: 28px;
+            font-weight: bold;
+            animation: fadeIn 2s ease-in-out;
+            text-align: center;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(10px); }
+        }
+        .shop-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+        .shop-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .shop-details {
+            flex-grow: 1;
+            text-align: left;
+        }
+       .shop-details h3 {
+    color: #333;
+    font-weight: bold;
+    font-size: 22px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+    margin-bottom: 10px;
+	animation: fadeIn 1.5s ease-in-out;
+}
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation for subtle pulsing effect */
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+
+        }
+        .shop-details p {
+            color: #666;
+            margin: 5px 0;
+        }
+        .rating {
+            display: flex;
+            margin-top: 10px;
+        }
+        .star {
+            font-size: 24px;
+            cursor: pointer;
+            color: gray;
+        }
+        .star.selected {
+            color: gold;
+        }
+        .contact-buttons button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .whatsapp, .email, .call {
+    background-color: #25D366;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.email {
+    background-color: #D44638;
+}
+
+.call {
+    background-color: #007BFF;
+}
+
+.whatsapp:hover, .email:hover, .call:hover {
+    transform: scale(1.1); /* Slightly enlarges the button on hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+}
+
+        .contact-buttons button:hover {
+            opacity: 0.8;
+        }
+
+.social-links,
+.footer {
+  background-color: #24262b;
+  color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 15px;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-col h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #ffd60a;
+  margin: 10px auto;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #bbbbbb;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffd60a;
+  padding-left: 5px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  background-color: #ffd60a;
+  color: #24262b;
+}
+
+@media (max-width: 768px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  background: #1d1f23;
+  color: #bbbbbb;
+  font-size: 14px;
+}
+@media (max-width: 530px) {
+  .suform-container,
+  .loginform-container {
+    background-color: rgba(54, 48, 87, 0.8);
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 11px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    border: 5px solid white;
+    z-index: 1111;
+    padding: 1rem;
+    transition: 1s all;
+  }
+   </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+	<nav class="navbar">
+ <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEja9QnExtlKaOCF_oQ-2y2E_-uB8zYpZYYcRyy86slIIyCAWJAsW4j5QILds6l2bbGQkPN1NbHGWnE-k1SZ0fj-zilrfBoLAg7CH7hPE9dqF0JKK0o-v1o-3Z9ij8-woTlMoThiyr05HX6f7WpCDq-4gbkIBwEjrLkxfut0lBzJhOqlQU1gdpmSYb8cMx8/s320/1334.png" 
+ alt="logo">
+  <ul class="menu" id="menu">
+     <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+	 <li><a href="shops.html">Shops</a></li>
+	  <li><a href="services.html">Services</a></li>
+	  	<li><a href="gallery.html">Gallery</a></li>
+	<li><a href="feedback.html">Feedback</a></li>
+		 <li><a href="Faq.html">FAQ</a></li>
+		 <li><a href="https://mahabaleshwaremarketing.blogspot.com/2025/03/mahabaleshwar-e-marketing.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+	<li><a href="admin.html">Admin</a></li>
+  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+</nav>
+
+<br>
+<div class="intro-container">
+    <h1> Mahabaleshwar Online Mart
+</h1>
+    <p class="intro-text">
+        Discover the best local products and shops in Mahabaleshwar. We bring you a digital shopping experience 
+        featuring authentic honey, handcrafted items, traditional clothing, and more. Support local businesses 
+        and shop with ease!
+    </p>
+</div>
+<br>
+   <h2>Shops</h2>
+<div class="shop-container">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicNj0EcdR-n7BcS9FJjCED2ytf1rSIqQg2dO9VvUCJjGOGFKZ_xgBC9ZMpnD8_dHMBuNLUVsmozu8MivaoBF5S4nYJrD0GW_ylffF-TBhKlx6gBGMrbpCfK084cqNyaGfHFTd-phiAgY5XmpNTRMFwxb0tPhsqYu8COflp5lvI45H2BeffxozfL-vJ_SE/s320/IMG-20250217-WA0048.jpg" 
+         alt="Shop 1" class="shop-image">
+
+    <div class="shop-details">
+        <h3>Sahyadri Chana Chikki</h3>
+        <p><strong>Owner:</strong> Mr. Manish Dhebe</p>
+        <p><strong>Address:</strong> Main Market, Mahabaleshwar</p>
+        <p><strong>Contact:</strong> +91 8408084307</p>
+        <p><strong>Email:</strong>freshhoney@shop.com</p>
+        <p><strong>WhatsApp:</strong>Chat on WhatsApp</p>
+        <p><strong>History:</strong> 22 years, known for its high quality and authenticity.</p>
+
+        <div class="rating" data-shop="1">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+        </div>
+
+        <div class="contact-buttons">
+            <button class="whatsapp" onclick="window.location.href='https://wa.me/918408084307'">WhatsApp</button>
+            <button class="email" onclick="window.location.href='mailto:freshhoney@shop.com'">Email</button>
+            <button class="call" onclick="window.location.href='tel:+918408084307'">Call</button>
+            <a href="product.html"><button class="get-details">Get Details</button></a>
+        </div>
+    </div>
+</div>
+
+	<div class="shop-container">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1XxiLJRHl971pI8x75uQwx-_XQIFfxiVmVpkdscChDbNU0GFcyWpBFhuS-M2_pRCSUesUtJaiTYy5U0OJsNSdM9qTgrwKBCclcoFSVGyHHP3x9Vl3TfAt_zPQgP8EWjAtOfzeL5K_IWfzGkl8O6QrnGR_C_sSvQNUFEC4mUSASz25x6hh3MkFnqhFNCg/s320/IMG-20250217-WA0064.jpg" 
+         alt="Shop 1" class="shop-image">
+    
+    <div class="shop-details">
+        <h3>Jannat Kashmir Shawl Emporium</h3>
+        <p><strong>Owner:</strong> Mr. Ahmad Irshad</p>
+        <p><strong>Address:</strong> Main Market, Mahabaleshwar</p>
+        <p><strong>Contact:</strong>+91 788997535</p>
+        <p><strong>Email:</strong> jannat_e_kashmir_o11@gmail.com</p>
+        <p><strong>WhatsApp:</strong> Chat on WhatsApp</p>
+        <p><strong>History:</strong> 22 years, known for its high quality and authenticity.</p>
+        
+        <div class="rating" data-shop="1">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+        </div>
+
+        <div class="contact-buttons">
+            <button class="whatsapp" onclick="window.location.href='https://wa.me/91788997535'">WhatsApp</button>
+            <button class="email" onclick="window.location.href='mailto:jannat_e_kashmir_o11@gmail.com'">Email</button>
+            <button class="call" onclick="window.location.href='tel:+91788997535'">Call</button>
+            <a href="product1.html"><button class="get-details">Get Details</button></a>
+        </div>
+    </div>
+</div>
+
+	<div class="shop-container">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgB9Ho9xz3TeANu9CBElpmL0fki2i_3KxHeQnW64Q5dX0ES3Gu5DiwFVlI-XzxqTWyOwOFnxLomv0nQXPIz6znTIPdiY0CYiPtqdBfsmjSTSLuU9Mr1_BvqOje3rDRRg47Ndh4OALyKZmk11D8VlOibH_Kt46RBIgdn5BANn_67RBE1ux-nxXcXteKbIds/s320/IMG-20250217-WA0077.jpg" 
+         alt="Shop 1" class="shop-image">
+    
+    <div class="shop-details">
+        <h3>Sanjay Handicraft</h3>
+        <p><strong>Owner:</strong> Mr. Sanjay Madhaka</p>
+        <p><strong>Address:</strong> Main Market, Mahabaleshwar</p>
+        <p><strong>Contact:</strong>+91 9130916575</p>
+        <p><strong>Email:</strong>Sanketwaikergo@gmail.com</p>
+        <p><strong>WhatsApp:</strong>Chat on WhatsApp</p>
+        <p><strong>History:</strong> 25 years, known for its high quality and authenticity.</p>
+        
+        <div class="rating" data-shop="1">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+        </div>
+
+        <div class="contact-buttons">
+            <button class="whatsapp" onclick="window.location.href='https://wa.me/919130916575'">WhatsApp</button>
+            <button class="email" onclick="window.location.href='mailto:Sanketwaikergo@gmail.com'">Email</button>
+            <button class="call" onclick="window.location.href='tel:+919130916575'">Call</button>
+            <a href="product2.html"><button class="get-details">Get Details</button></a>
+        </div>
+    </div>
+</div>
+
+	<div class="shop-container">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCyHT0gHh-QAFSQ0woR0m8oDVSWYvuJy4nroPGIVnton8rAxhbK2JcWQtH89k_SPQgdsGS9RKamfCIes4pIip0eM4tv6zrP-_5r41kKc9D9vS-rH5h99AwEKbPCaFvEEYR31iwAdKW-HtlSgVCcO96udj4FL3s2ihTRt5x4-1Enor_UptTL9pzkSO2dek/s320/IMG-20250217-WA0053.jpg" 
+         alt="Shop 1" class="shop-image">
+    
+    <div class="shop-details">
+        <h3>Hanuman Shoes Smart</h3>
+        <p><strong>Owner:</strong> Mr. Mandar Modan Tambe</p>
+        <p><strong>Address:</strong> Main Market, Mahabaleshwar</p>
+        <p><strong>Contact:</strong>+91 7588384581</p>
+        <p><strong>Email:</strong>mandar.tambe1@gmail.com</p>
+        <p><strong>WhatsApp:</strong> Chat on WhatsApp</p>
+        <p><strong>History:</strong> 75 years, known for its high quality and authenticity.</p>
+        
+        <div class="rating" data-shop="1">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+        </div>
+
+        <div class="contact-buttons">
+            <button class="whatsapp" onclick="window.location.href='https://wa.me/917588384581'">WhatsApp</button>
+            <button class="email" onclick="window.location.href='mailto:mandar.tambe1@gmail.com'">Email</button>
+            <button class="call" onclick="window.location.href='tel:+917588384581'">Call</button>
+            <a href="product3.html"><button class="get-details">Get Details</button></a>
+        </div>
+    </div>
+</div>
+
+
+<iframe src=
+"opupdate.html"
+			height="500"
+			width="100%">		
+	</iframe>
+	
+<footer class="footer">
+  <div class="footer-container">
+ <!-- Contact Section -->
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <p>📍 <a href="Mahabaleshwar,Maharashtra" style="color: #ffd60a;">Mahabaleshwar,Maharashtra</a></p>
+      <p>📞 <a href="tel:826xxxxxxx" style="color: #ffd60a;">826xxxxxxx</a></p>
+      <p>📧 <a href="mailto:lssproject05@gmail.com" style="color: #ffd60a;">lssproject05@gmail.com</a></p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-col">
+      <h3>Developers</h3>
+      <ul>
+        <li><a href="Developer.html">Developer</a></li>
+		</ul>
+    </div>
+</div>
+ <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    &copy; 2025 Mahabaleshwar Online Mart
+ | MKSSS'S Maharshi Karve Mahila Mahavidyalay Satara.|Team Member Name - Laxmi Akkennawar | Sanika Ombale | Suhani Padale.
+  </div>
+</footer>
+<script>
+  function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    const ratings = document.querySelectorAll(".rating");
+    
+    ratings.forEach(rating => {
+        const stars = rating.querySelectorAll(".star");
+        
+        stars.forEach(star => {
+            star.addEventListener("mouseover", function () {
+                highlightStars(rating, this.dataset.value);
+            });
+            
+            star.addEventListener("click", function () {
+                setRating(rating, this.dataset.value);
+            });
+            
+            rating.addEventListener("mouseleave", function () {
+                resetStars(rating);
+            });
+        });
+    });
+    
+    function highlightStars(rating, value) {
+        rating.querySelectorAll(".star").forEach(star => {
+            star.style.color = star.dataset.value <= value ? "gold" : "gray";
+        });
+    }
+    
+    function setRating(rating, value) {
+        rating.dataset.selected = value;
+    }
+    
+    function resetStars(rating) {
+        const selectedValue = rating.dataset.selected || 0;
+        rating.querySelectorAll(".star").forEach(star => {
+            star.style.color = star.dataset.value <= selectedValue ? "gold" : "gray";
+        });
+    }
+});
+
+</script>
+
+    
+</body>
+</html>
